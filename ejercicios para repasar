@@ -286,5 +286,134 @@ public class ex1011_Sphere
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
+package repaso;
 
+import java.io.*;
+import java.text.DecimalFormat;
 
+public class ex1015_DistanceBetweenTwoPoints
+{
+		public static void main(String args[])
+		{
+				BufferedReader br =  new BufferedReader ( new InputStreamReader (System.in));
+				BufferedWriter bw =  new BufferedWriter ( new OutputStreamWriter (System.out));
+				DecimalFormat df = new DecimalFormat ("##0.000");
+					
+				try
+				{
+						String[] line1 = br.readLine().split(" ");
+						String[] line2 = br.readLine().split(" ");
+					
+						double x1 = Double.parseDouble ( line1[0] );
+						double y1 = Double.parseDouble ( line1[1] );
+						
+						double x2 = Double.parseDouble ( line2[0] );
+						double y2 = Double.parseDouble ( line1[1] );
+						
+						
+						double distance = Math.sqrt (Math.pow((x2 - x1), 2.0 ) + Math.pow((y2 - y1), 2.0) );
+						
+						bw.write( df.format( distance ) + "\n");
+						bw.flush();
+						
+		}		
+				catch (Exception e)
+				{
+						e.printStackTrace();
+				}
+		}
+	
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+package repaso;
+
+import java.io.*;
+
+public class ex1018_Banknotes
+{
+		public static void main(String args[])
+		{
+				BufferedReader br =  new BufferedReader ( new InputStreamReader (System.in));
+				BufferedWriter bw =  new BufferedWriter ( new OutputStreamWriter (System.out));
+				
+					
+				try
+				{
+						
+						int total = Integer.parseInt ( br.readLine() );
+						int temp = total;
+						
+						
+						int n100 = temp / 100;
+						temp %= 100;
+						
+						int n50 = temp / 100;
+						temp %= 50;
+						
+						int n20 = temp / 100;
+						temp %= 20;
+						
+						int n10 = temp / 100;
+						temp %= 10;
+						
+						int n5 = temp / 100;
+						temp %= 5;
+						
+						int n2 = temp / 100;
+						temp %= 2;
+						
+						
+						int	n1 = temp;
+						
+						bw.write (total + "\n" + " notas de R$ 100,00\\n" + n50 + " nota(s) de R$ 50,00\n" + n20 + " nota(s) de R$ 20,00\n" + n10 + " nota(s) de R$ 10,00\n" + n5 + " nota(s) de R$ 5,00\n" + n2 + " nota(s) de R$ 2,00\n" + n1 + " nota(s) de R$ 1,00\n" );
+						bw.flush();
+		        }
+				catch(Exception e) 
+				{
+					e.printStackTrace();
+				}
+}       }
+	
+-----------------------------------------------------------------------------------------------------------------------------------------
+package repaso;
+
+import java.io.*;
+import java.text.DecimalFormat;
+
+public class ex1154_Ages
+{
+		public static void main(String args[])
+		{
+				BufferedReader br =  new BufferedReader ( new InputStreamReader (System.in));
+				BufferedWriter bw =  new BufferedWriter ( new OutputStreamWriter (System.out));
+				DecimalFormat df = new DecimalFormat ("##.00");
+					
+				try
+				{
+					
+						int num;
+								int acum = 0;
+								int counter = 0;
+								double average;
+								
+								while((num = Integer.parseInt (br.readLine())) >= 0 )
+								{
+											acum += num;
+											counter ++;
+								}
+								
+								average = (double) acum / counter;
+					
+						bw.write(df.format(average) + "\n");
+						bw.flush();
+						
+		}		
+				catch (Exception e)
+				{
+						e.printStackTrace();
+				}
+		}
+	
+}
